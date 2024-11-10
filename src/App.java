@@ -1,8 +1,10 @@
-import Poli_retos.Start.Inicio;
-import Poli_retos.Array.Array;
-import Poli_retos.Automata.Automata;
+import Poli_retos.Start.Grupo4;
+import Poli_retos.Array.Array2;
+import Poli_retos.Automata.Automata4;
 import Poli_retos.CadenaDeCaracteres.CadenaDeCaracteres;
-import Poli_retos.Figura.Figura;
+import Poli_retos.Figura.Figura5;
+import Poli_retos.Figura.Figura10;
+import Poli_retos.Figura.Figura15;
 import Poli_retos.Loading.Loading;
 import Poli_retos.Recursion.Recursion;
 import Poli_retos.SerieDeCaracteres.SerieDeCaracteres;
@@ -13,7 +15,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         // Muestra la información del grupo
-        Inicio.mostrarInformacionGrupo();
+        Grupo4.mostrarInformacionGrupo();
 
         Scanner scanner = new Scanner(System.in);
         int opcion;
@@ -34,16 +36,16 @@ public class App {
 
             switch (opcion) {
                 case 1:
-                    ejecutarArray(scanner);
+                    ejecutarArrays(scanner);
                     break;
                 case 2:
-                    ejecutarAutomata();
+                    ejecutarAutomatas();
                     break;
                 case 3:
                     ejecutarCadenaDeCaracteres(scanner);
                     break;
                 case 4:
-                    ejecutarFigura();
+                    ejecutarFigura(scanner);
                     break;
                 case 5:
                     ejecutarLoading();
@@ -68,29 +70,27 @@ public class App {
         scanner.close();
     }
 
-    private static void ejecutarArray(Scanner scanner) {
+    private static void ejecutarArrays(Scanner scanner) {
         System.out.print("Ingrese el tamaño de la letra: ");
         int size = scanner.nextInt();
         System.out.print("Ingrese el carácter para dibujar: ");
         char caracter = scanner.next().charAt(0);
-        Array array = new Array();
+        Array2 array = new Array2();
         array.generarArray(size, caracter);
     }
-    
 
-    private static void ejecutarAutomata() {
-        Automata automata = new Automata();
+    private static void ejecutarAutomatas() {
+        Automata4 automata = new Automata4();
         String[] pruebas = {"123", "12.34", "0.5", ".5", "5.", "abc", "12..34"};
         automata.ejecutar(pruebas);
     }
-    
 
     private static void ejecutarCadenaDeCaracteres(Scanner scanner) {
         System.out.println("1. Contar vocales en una frase");
         System.out.println("2. Invertir frase en mayúsculas");
         int opcion = scanner.nextInt();
         scanner.nextLine(); // Limpiar el buffer
-    
+
         if (opcion == 1) {
             System.out.print("Ingrese una frase: ");
             String frase = scanner.nextLine();
@@ -105,13 +105,18 @@ public class App {
             System.out.println("Opción no válida en Cadenas de Caracteres.");
         }
     }
-    
 
-    private static void ejecutarFigura() {
-        Figura figura = new Figura();
-        figura.dibujarF5();
-        figura.dibujarF10();
-        figura.dibujarF15();
+    private static void ejecutarFigura(Scanner scanner) {
+        System.out.print("Ingrese el número de filas para las figuras: ");
+        int numeroFilas = scanner.nextInt();
+
+        Figura5 figura5 = new Figura5();
+        Figura10 figura10 = new Figura10();
+        Figura15 figura15 = new Figura15();
+
+        figura5.dibujar(numeroFilas);
+        figura10.dibujar(numeroFilas);
+        figura15.dibujar(numeroFilas);
     }
 
     private static void ejecutarLoading() {

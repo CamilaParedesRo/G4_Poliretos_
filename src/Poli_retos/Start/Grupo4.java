@@ -1,6 +1,7 @@
 package Poli_retos.Start;
 
-public class Inicio {
+
+public class Grupo4 {
     public static void main(String[] args) {
         // Muestra el número del grupo e integrantes
         mostrarInformacionGrupo();
@@ -18,3 +19,4 @@ public class Inicio {
         System.out.println("Adayeli Rochina");
     }
 }
+
