@@ -1,7 +1,5 @@
 package Poli_retos.SerieNumerica;
 
-import java.util.Scanner;
-
 public class SerieNumerica_6 {
  public void G4_SeriesNumericas_S6(int n){
       System.out.println(" ");

@@ -1,18 +1,15 @@
 package Poli_retos.Figura;
 
-import java.util.Scanner;
-
 public class Figura_12 {
-public void G4_Figuras_12( Scanner scanner) {
-      int numeros;
+public void G4_Figuras_12(int extension) {
+
       System.out.println("Figura 12");    
-       System.out.println("Ingrese el numero de la extención de}l triángulo de números invertido: ");
-       numeros = scanner.nextInt();
+
        System.out.println( " ");
 
-       for (int filas = 1; filas <= numeros; filas++) {                      
-           for (int columnas = 1 ; columnas <= numeros; columnas++){   
-               if (columnas <= numeros - filas + 1){
+       for (int filas = 1; filas <= extension; filas++) {                      
+           for (int columnas = 1 ; columnas <= extension; columnas++){   
+               if (columnas <= extension - filas + 1){
                    System.out.print(columnas);
                } else { 
                System.out.print(" ");

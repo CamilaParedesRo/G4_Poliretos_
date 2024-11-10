@@ -36,14 +36,24 @@ public class Automata_1 {
   }
   
   public void G4_Automata_1(Scanner scanner) {
-   System.out.println("Automata 1 ");
-   System.out.println("Escriba una cadena para validar: ");
-   String cadena = scanner.nextLine();
-      if (validarCadena_automata1(cadena)) {
-          System.out.println("La cadena es válida");
-      } else {
-          System.out.println("La cadena no es válida");
-      }
-   System.out.println(" ");
-  } 
-}
+    String respuesta;
+    do {
+        System.out.println("Automata 1 ");
+        System.out.println("Escriba una cadena para validar: ");
+        String cadena = scanner.nextLine();  // Leemos la cadena a validar
+
+        if (validarCadena_automata1(cadena)) {
+           System.out.println("La cadena es válida");
+        } else {
+           System.out.println("La cadena no es válida");
+        }
+        System.out.println("¿Deseas validar otra cadena? (s/n)");
+        respuesta = scanner.nextLine().trim().toLowerCase();  //
+        
+     } while (respuesta.equals("s"));  
+
+     System.out.println("¡Hasta luego!");
+  }
+
+ }
+

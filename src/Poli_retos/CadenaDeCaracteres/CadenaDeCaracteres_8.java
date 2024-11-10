@@ -20,11 +20,32 @@ public class CadenaDeCaracteres_8 {
         boolean acierto = false;
 
         for (int intentos = 1; intentos <= maxIntentos; intentos++) {
-            System.out.print("Ingrese la palabra: ");
-            String palabra = scanner.nextLine().toLowerCase();
-            System.out.print("Ingrese el anagrama: ");
-            String anagramaIntento = scanner.nextLine().toLowerCase();
-
+            String palabra;
+            while (true) {
+                System.out.print("Ingrese la palabra: ");
+                palabra = scanner.nextLine().toLowerCase();
+                palabra = palabra.replace(" ", "");
+                if (palabra.matches("[a-zA-Z]+") && palabraConSuAnagrama.containsKey(palabra)) {
+                    break; 
+                } else if (!palabra.matches("[a-zA-Z]+")) {
+                    System.out.println("El nombre solo puede contener letras.");
+                } else {
+                    System.out.println("La palabra no está en el listado de palabras válidas.");
+                }
+            }
+            
+            String anagramaIntento;
+            while (true) {
+                System.out.print("Ingrese el anagrama: ");
+                anagramaIntento = scanner.nextLine().toLowerCase();
+                anagramaIntento = anagramaIntento.replace(" ", "");
+                if (anagramaIntento.matches("[a-zA-Z]+")) {
+                    break; 
+                } else {
+                    System.out.println("El nombre solo puede contener letras.");
+                }
+            }
+            
             if (palabraConSuAnagrama.containsKey(palabra) && 
                 anagramaIntento.equalsIgnoreCase(palabraConSuAnagrama.get(palabra))) {
                 acierto = true;

@@ -1,6 +1,8 @@
 
 package Poli_retos.Recursion;
 
+import java.util.Scanner;
+
 public class Recursion_3 {
 
    public static int multiplicacion_recursiva(int a, int b) {
@@ -14,8 +16,37 @@ public class Recursion_3 {
   }
   
     public void G4_Recursion_3(){
-      int resultado = multiplicacion_recursiva(100, 4); // multiplicacion 
-      System.out.println("Resultado: " + resultado);
-      System.out.println( " ");
+
+        System.out.println("Recursión 3");
+       Scanner scanner = new Scanner(System.in);
+
+      int a = 0;
+      while (true) {
+         System.out.print("Ingresa el primer número: ");
+         if (scanner.hasNextInt()) {
+            a = scanner.nextInt(); 
+            break; 
+         } else {
+            System.out.println("Error: Por favor, ingrese un número entero válido.");
+            scanner.next(); 
+         }
+      }
+
+      int b = 0;
+      while (true) {
+         System.out.print("Ingresa el segundo número: ");
+         if (scanner.hasNextInt()) {
+            b = scanner.nextInt(); 
+            break; 
+         } else {
+            System.out.println("Error: Por favor, ingrese un número entero válido.");
+            scanner.next();
+         }
+      }
+
+
+      int resultado = multiplicacion_recursiva(a, b);
+      System.out.println("El resultado de " + a + " * " + b + " es: " + resultado);
+   }
   }
-}
+

@@ -1,5 +1,7 @@
 package Poli_retos.Recursion;
 
+import java.util.Scanner;
+
 public class Recursion_2 {
    public static int sumaRecursiva(int [] A, int i){
       if (i == A.length){
@@ -8,29 +10,48 @@ public class Recursion_2 {
          return A[i] + sumaRecursiva(A, i+1);
       }
    }
-   int A [] = {2,1,5,4,3,2,7,8,5};
-   int resusultado;
+
    public void G4_Recursion_2(){
-      System.out.println("Recursion 2");
-      resusultado = sumaRecursiva(A, 0);
-      System.out.println(resusultado);
-      System.out.println(" ");
+      
+         Scanner scanner = new Scanner(System.in);
+         int cantidad;
+         while (true) {
+            System.out.println("¿Cuántos números deseas ingresar?: ");
+            if (scanner.hasNextInt()) {
+                cantidad = scanner.nextInt();
+                if (cantidad > 0) {
+                 break; 
+             } else {
+                 System.out.println("Error: Por favor, ingrese un número entero positivo.");
+             } 
+            } else {
+                System.out.println("Error: Por favor, ingrese un número entero válido.");
+                scanner.next(); 
+            }
+         }
+
+         int[] A = new int[cantidad];
+      
+         System.out.println("Por favor, ingresa " + cantidad + " números:");
+      for (int i = 0; i < cantidad; i++) {
+         int numero = 0;
+         while (true) {
+            System.out.print("Ingresa el número " + (i + 1) + ": ");
+            if (scanner.hasNextInt()) {
+               numero = scanner.nextInt(); 
+               break; 
+            } else {
+               System.out.println("Error: Por favor, ingrese un número entero válido.");
+               scanner.next(); 
+            }
+         }
+         A[i] = numero; // Almacenar los numeros
+      }
+
+         int resultado = sumaRecursiva(A, 0);
+         System.out.println("La suma de los números es: " + resultado);
+         System.out.println(" ");
+      }
    }
 
 
-   public static int multiplicacion_recursiva(int a, int b) {
-      if (b == 0) {
-          return 0;
-      } else if (b > 0) {
-          return a + multiplicacion_recursiva(a, b - 1);
-      } else {
-          return -multiplicacion_recursiva(a, -b);
-      }
-  }
-
-    public void G4_Recursion_3(){
-      int resultado = multiplicacion_recursiva(100, 4); // multiplicacion 
-      System.out.println("Resultado: " + resultado);
-      System.out.println( " ");
-  }
-}

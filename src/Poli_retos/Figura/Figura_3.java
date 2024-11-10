@@ -1,15 +1,10 @@
  package Poli_retos.Figura;
 
-import java.util.Scanner;
-
 public class Figura_3 {
- public void G4_Figuras_3 (Scanner scanner){
-        int tamano;
+ public void G4_Figuras_3 (int extension){
       System.out.println("Figura 03");    
-        System.out.println("Ingrese el numero de la extención de la escalera: ");
-        tamano = scanner.nextInt();
-        for (int filas = 1; filas <= tamano; filas++) {                      
-            for (int columnas = 1 ; columnas <= tamano; columnas++){
+        for (int filas = 1; filas <= extension; filas++) {                      
+            for (int columnas = 1 ; columnas <= extension; columnas++){
                 if (columnas <= filas){
                     System.out.print("* ");
                 } else {
