@@ -3,11 +3,23 @@ package Poli_retos.Automata;
 import java.util.Scanner;
 
 public class Automata_03_1 {
-public void G4_Automata3(Scanner scanner) {
+    public void G4_Automata03_1(Scanner scanner) {
 
         System.out.println("Automata 3.1");
-        System.out.println("Ingresa la cadena a validar (debe seguir el patrón 1/0+/1*):");
-        String entrada = scanner.nextLine();
+        String entrada = "";
+
+        
+        boolean entradaValida = false;
+        while (!entradaValida) {
+            System.out.println("Ingresa la cadena a validar (debe seguir el patrón 1/0+/1*):");
+            entrada = scanner.nextLine();
+
+            if (esCadenaValida(entrada)) {
+                entradaValida = true; 
+            } else {
+                System.out.println("Cadena inválida. Solo puedes ingresar '1' y '0'. Inténtalo de nuevo.");
+            }
+        }
 
         ValidadorAutomata101 automata = new ValidadorAutomata101();
         if (automata.esValida101(entrada)) { 
@@ -15,6 +27,16 @@ public void G4_Automata3(Scanner scanner) {
         } else {
             System.out.println("La cadena es inválida.");
         }
+    }
+
+    
+    public boolean esCadenaValida(String entrada) {
+        for (char ch : entrada.toCharArray()) {
+            if (ch != '1' && ch != '0') {
+                return false; 
+            }
+        }
+        return true; 
     }
 
     public class ValidadorAutomata101 {
@@ -59,3 +81,4 @@ public void G4_Automata3(Scanner scanner) {
         }
     }
 }
+

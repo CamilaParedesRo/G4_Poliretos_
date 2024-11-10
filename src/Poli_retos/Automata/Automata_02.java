@@ -5,8 +5,20 @@ import java.util.Scanner;
 public class Automata_02 {
     public void G4_Automata02(Scanner scanner) {
         System.out.println("Automata para el patrón ab+ca");
-        System.out.println("Ingresa la cadena a validar (debe seguir el patrón ab+ca):");
-        String entrada = scanner.nextLine();
+        String entrada = "";
+        
+       
+        boolean entradaValida = false;
+        while (!entradaValida) {
+            System.out.println("Ingresa la cadena a validar (debe seguir el patrón ab+ca):");
+            entrada = scanner.nextLine();
+            
+            if (esCadenaValida(entrada)) {
+                entradaValida = true; 
+            } else {
+                System.out.println("Cadena inválida. Solo puedes ingresar 'a', 'b' o 'c'. Inténtalo de nuevo.");
+            }
+        }
 
         ValidadorAutomataABCA automata = new ValidadorAutomataABCA();
         if (automata.esValidaABCA(entrada)) { 
@@ -14,6 +26,16 @@ public class Automata_02 {
         } else {
             System.out.println("La cadena es inválida.");
         }
+    }
+
+    
+    public boolean esCadenaValida(String entrada) {
+        for (char ch : entrada.toCharArray()) {
+            if (ch != 'a' && ch != 'b' && ch != 'c') {
+                return false; // 
+            }
+        }
+        return true;
     }
 
     public class ValidadorAutomataABCA {
@@ -39,7 +61,6 @@ public class Automata_02 {
                 }
             }
 
-            
             return (estadoActual == 2 || estadoActual == 3);
         }
 
@@ -53,3 +74,4 @@ public class Automata_02 {
         }
     }
 }
+
