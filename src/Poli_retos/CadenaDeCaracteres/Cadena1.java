@@ -11,7 +11,6 @@ public class Cadena1 {
 
         for (int i = 0; i < frase.length(); i++) {
             char caracter = Character.toLowerCase(frase.charAt(i));
-
             if (caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o' || caracter == 'u') {
                 contador++;
             }

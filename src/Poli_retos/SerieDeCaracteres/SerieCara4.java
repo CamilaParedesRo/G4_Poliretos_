@@ -3,7 +3,6 @@ package Poli_retos.SerieDeCaracteres;
 public class SerieCara4 {
     public void generar(int numeroTerminos) {
         System.out.println("Serie de caracteres S4:");
-
         char[] simbolos = {'+', '-', '*', '/'};
         
         for (int i = 0; i < numeroTerminos; i++) {
