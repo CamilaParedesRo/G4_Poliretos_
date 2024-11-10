@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class App {
        public static void main(String[] args) throws Exception {
-       
+
+
     }
 
     // Validadores
@@ -25,6 +26,11 @@ public class App {
         }
         scanner.close();
          return extension;
-       }  
+       } 
+
+   
+    
+  
+    
  }
 

@@ -3,109 +3,176 @@ package Poli_retos.Automata;
 import java.util.Scanner;
 
 public class Automata_6 {
-    public enum Estado {
-        q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, qError
+    public static boolean validarCadena_automata6(String input) {
+        int estado = 0;
+    
+        // Recorrer cada carácter de la entrada
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+    
+            switch (estado) {
+                case 0: // Estado inicial, espera 'f', 'i', o 'e'
+                    if (c == 'f') {
+                        estado = 1; // Empezando la palabra "for"
+                    } else if (c == 'i') {
+                        estado = 10; // Empezando la palabra "if"
+                    } else if (c == 'e') {
+                        estado = 20; // Empezando la palabra "else"
+                    } else {
+                        return false; 
+                    }
+                    break;
+    
+               // "for"
+                case 1: // Espera 'o'
+                    if (c == 'o') {
+                        estado = 2;
+                    } else {
+                        return false; 
+                    }
+                    break;
+    
+                case 2:
+                    if (c == 'r') {
+                        estado = 3;
+                    } else if (c == 'e'){
+                        estado = 25;
+                    } else {
+                        return false; 
+                    }
+                    break;
+    
+                case 3: 
+                    if (c == '(') {
+                        return true; // Cadena válida "for("
+                    } else if (c == ' ') {
+                        estado = 4; 
+                    } else {
+                        return false; 
+                    }
+                    break;
+    
+                case 4: 
+                    if (c == '(') {
+                        return true; // Cadena válida"for( "
+                    } else if (c != ' ') {
+                        return false; 
+                    }
+                    break;
+    
+                //"if"
+                case 10: // Espera 'f'
+                    if (c == 'f') {
+                        estado = 11;
+                    } else {
+                        return false; 
+                    }
+                    break;
+    
+                case 11: 
+                    if (c == '(') {
+                        return true; // Cadena válida "if("
+                    } else if (c == ' ') {
+                        estado = 12; 
+                    } else if (c == '{') {
+                        return true; // Cadena válida "if {"
+                    } else {
+                        return false;
+                    }
+                    break;
+    
+                case 12: 
+                    if (c == '{') {
+                        return true; // Cadena válida  "if {"
+                    } else if (c != ' ') {
+                        return false; 
+                    }
+                    break;
+    
+                case 20: // Espera 'l'
+                    if (c == 'l') {
+                        estado = 21;
+                    } else {
+                        return false;
+                    }
+                    break;
+    
+                case 21: // Espera 's'
+                    if (c == 's') {
+                        estado = 22;
+                    } else {
+                        return false;
+                    }
+                    break;
+    
+                case 22: // Espera 'e'
+                    if (c == 'e') {
+                        estado = 23;
+                    } else {
+                        return false;
+                    }
+                    break;
+    
+                case 23: // else if
+                    if (c == '{') {
+                        return true; // Cadena válida  "else{"
+                    } else if (c == ' ') {
+                        estado = 24; 
+                    } else if (c == 'i') {
+                        estado = 10; 
+                    } else {
+                        return false; 
+                    }
+                    break;
+    
+                case 24: // Permite múltiples espacios antes de '{' o "if"
+                    if (c == '{') {
+                        return true; // Cadena válida "else {"
+                    } else if (c == 'i') {
+                        estado = 10; 
+                    } else if (c != ' ') {
+                        return false; 
+                    }
+                    break;
+                case 25: // Espera 'l'
+                    if (c == 'a') {
+                        estado = 26;
+                    } else {
+                        return false;
+                    }
+                    break;
+                case 26: // Espera 'l'
+                    if (c == 'c') {
+                        estado = 27;
+                    } else {
+                        return false;
+                    }
+                    break;
+                 case 27: // Espera 'l'
+                    if (c == 'h') {
+                        return true;
+                    }
+                    break;
+                default:
+                    return false;
+            }
+        }
+    
+        return false; // Si termina sin alcanzar un estado de aceptación, es inválido
     }
     
-    public static Estado transicion(Estado estadoActual, char c) {
-        // Primero, ignoramos espacios y tabulaciones
-        if (c == ' ' || c == '\t') {
-            return estadoActual; // Si es espacio o tabulación, no cambiamos de estado
-        }
-        
-        switch (estadoActual) {
-            case q0:
-                if (c == 'f') return Estado.q1;  // transicion de 'f' a q1
-                if (c == 'i') return Estado.q4;  // transicion de 'i' a q4
-                return Estado.qError;  // si el carácter no es 'f' ni 'i', error
-    
-            case q1:
-                if (c == 'o') return Estado.q2;  // transicion de 'o' a q2
-                return Estado.qError;  // error si no es 'o'
-    
-            case q2:
-                if (c == 'r') return Estado.q3;  // transicion de 'r' a q3
-                return Estado.qError;  // error si no es 'r'
-    
-            case q3:
-                if (c == '(') return Estado.q0;  // transicion de '(' a q0
-                return Estado.qError;  // error si no es '('
-    
-            case q4:
-                if (c == 'f') return Estado.q5;  // transicion de 'f' a q5
-                return Estado.qError;  // error si no es 'f'
-    
-            case q5:
-                if (c == '(') return Estado.q0;  // transicion de '(' a q0
-                if (c == 'e') return Estado.q6;  // transicion de 'e' a q6
-                return Estado.qError;  // error si no es '(' ni 'e'
-    
-            case q6:
-                if (c == 's') return Estado.q7;  // transicion de 's' a q7
-                return Estado.qError;  // error si no es 's'
-    
-            case q7:
-                if (c == 'e') return Estado.q8;  // transicion de 'e' a q8
-                return Estado.qError;  // error si no es 'e'
-    
-            case q8:
-                if (c == '(') return Estado.q0;  // transicion de '(' a q0
-                return Estado.qError;  // error si no es '('
-    
-            case q9:
-                if (c == 'e') return Estado.q10;  // transicion de 'e' a q10
-                return Estado.qError;  // error si no es 'e'
-    
-            case q10:
-                if (c == 'h') return Estado.q11;  // transicion de 'h' a q11
-                return Estado.qError;  // error si no es 'h'
-    
-            case q11:
-                if (c == '(') return Estado.q0;  // transicion de '(' a q0
-                return Estado.qError;  // error si no es '('
-    
-            default:
-                return Estado.qError;  // si el estado no es reconocido, error
-        }
-    }
 
-
-public static boolean validarCadena_automata6(String cadena) {
-   Estado estadoActual = Estado.q0;
-
-   for (char c : cadena.toCharArray()) {
-       estadoActual = transicion(estadoActual, c);
-       if (estadoActual == Estado.qError) {
-           return false; 
-       }
-   }
-   return estadoActual == Estado.q3 || estadoActual == Estado.q5 || estadoActual == Estado.q8 || estadoActual == Estado.q11;
-}
-
-// Método para ejecutar el autómata
 public void G4_Automata_6(Scanner scanner) {
+   System.out.print("Automata 6");
+   System.out.print("Ingrese una palabra: ");
+   String cadena = scanner.nextLine();
 
-   String respuesta;
-   do {
-    System.out.print("Automata 6");
-       System.out.print("Ingrese una palabra: ");
-       String cadena = scanner.nextLine();
-
-       if (validarCadena_automata6(cadena)) {
-           System.out.println("La palabra es válida en el lenguaje L.");
-       } else {
-           System.out.println("La palabra no es válida en el lenguaje L.");
-       }
-
-       System.out.println("¿Deseas validar otra cadena? (s/n)");
-       respuesta = scanner.nextLine().trim().toLowerCase();  // Leemos la respuesta y la convertimos a minúsculas
-       
-    } while (respuesta.equals("s"));  // Si la respuesta es 's', seguimos validando más cadenas
-
-    // Mensaje de despedida cuando el ciclo termina
-    System.out.println("¡Hasta luego!");
+   if (validarCadena_automata6(cadena)) {
+       System.out.println("La palabra es válida en el lenguaje L.");
+   } else {
+       System.out.println("La palabra no es válida en el lenguaje L.");
+   }
+   System.out.print(" ");
 }
-
 }
-
 
