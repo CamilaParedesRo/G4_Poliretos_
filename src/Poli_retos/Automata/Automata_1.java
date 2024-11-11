@@ -12,7 +12,7 @@ public class Automata_1 {
         // a        b         c
         { 0,        1,    error },      // q0
         { error,    1,        3 },      // q1 
-        { error,   error,    error }   // q2
+        { error,   error, error }   // q2
     };
 
     private int getIndexAlfabeto(String moneda) {
