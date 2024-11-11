@@ -3,57 +3,54 @@ package Poli_retos.Automata;
 import java.util.Scanner;
 
 public class Automata_1 {
-   public static boolean validarCadena_automata1(String cadena) {
-      int estado = 0; 
-      for (int i = 0; i < cadena.length(); i++) {
-          char simbolo = cadena.charAt(i);
-          switch (estado) {
-              case 0:
-                  if (simbolo == 'a') {
-                      estado = 0;
-                  } else if (simbolo == 'b') {
-                      estado = 1;
-                  } else {
-                      return false;
-                  }
-                  break;
+    final String alfabeto = "a-b-c";
+    final int error = -1;
+    final int Resp = 3; // Estado de aceptación
+    
+    // Matriz de transiciones: q0, q1, q2, q3
+    final int[][] maquina = {
+        // a        b         c
+        { 0,        1,    error },      // q0
+        { error,    1,        3 },      // q1 
+        { error,   error,    error }   // q2
+    };
 
-              case 1:
-                  if (simbolo == 'b') {
-                      estado = 1;
-                  } else if (simbolo == 'c') {
-                      estado = 2;
-                  } else {
-                      return false;
-                  }
-                  break;
-
-              case 2:
-                  return false;
-          }
-      }
-      return estado == 2;
-  }
-  
-  public void G4_Automata_1(Scanner scanner) {
-    String respuesta;
-    do {
-        System.out.println("Automata 1 ");
-        System.out.println("Escriba una cadena para validar: ");
-        String cadena = scanner.nextLine();  // Leemos la cadena a validar
-
-        if (validarCadena_automata1(cadena)) {
-           System.out.println("La cadena es válida");
-        } else {
-           System.out.println("La cadena no es válida");
+    private int getIndexAlfabeto(String moneda) {
+        Scanner scAlfa = new Scanner(alfabeto).useDelimiter("-");
+        for (int indexAlfa = 0; scAlfa.hasNext(); indexAlfa++) {
+            if (moneda.equals(scAlfa.next()))
+                return indexAlfa;
         }
-        System.out.println("¿Deseas validar otra cadena? (s/n)");
-        respuesta = scanner.nextLine().trim().toLowerCase();  //
-        
-     } while (respuesta.equals("s"));  
-
-     System.out.println("¡Hasta luego!");
-  }
+        return -1; 
+    }
+    
+    public void G4_Automata_1() {
+ 
+      Scanner scanner = new Scanner(System.in);
+      System.out.print("Automata 1");
+      System.out.println("Introduce una cadena para validar: ");
+      String palabra = scanner.nextLine();
+      int estadoActual = 0; // Estado inicial
+      Scanner scannerPalabra = new Scanner(palabra).useDelimiter(""); 
+      while (scannerPalabra.hasNext()) {
+          String simbolo = scannerPalabra.next();
+          int indexAlfa = getIndexAlfabeto(simbolo);
+          if (indexAlfa == -1 || maquina[estadoActual][indexAlfa] == error) {
+              System.out.println("Cadena no válida");
+              return;
+          }
+          estadoActual = maquina[estadoActual][indexAlfa]; 
+      }
+      if (estadoActual == Resp) {
+         System.out.println("Cadena válida");
+      } else {
+         System.out.println("Cadena no válida");
+      }
+     scanner.close();
+     scannerPalabra.close();
+    }       
 
  }
 
+
+ 
