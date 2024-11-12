@@ -3,7 +3,7 @@ package Poli_retos.SerieDeCaracteres;
 import java.util.Scanner;
 
 public class SerieDeCaracter_03 {
-    public class SerieDeCarecteres_03 {
+    
  public boolean esPrimo(int numero) {
         if (numero <= 1) {
             return false;  
@@ -16,14 +16,12 @@ public class SerieDeCaracter_03 {
         return true;  
     }
 
-    public void G4_Secuencia_CaracterS3(Scanner scanner) {
+    public void G4_Secuencia_CaracterS3(int extension) {
         System.out.println("Secuencia de Caracteres S3");
-        System.out.print("Ingrese el límite de la serie S3: ");
-        int limit = scanner.nextInt(); 
+
         int contador = 0;
        
-
-        for (int numero = 2; contador < limit; numero++) {
+        for (int numero = 2; contador < extension; numero++) {
             if (esPrimo(numero)) {
                 for (int i = 0; i < numero; i++) {
                     System.out.print("+");
@@ -34,5 +32,4 @@ public class SerieDeCaracter_03 {
         }
         System.out.println();
     }
-}
 }

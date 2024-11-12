@@ -1,7 +1,8 @@
 package Poli_retos.Loading;
 
 public class Loading_07 {
-    public void GR4_mostrar() {
+    public void G4_Loading07() {
+        System.out.print("Loading 7");
         char[] rotacion = {'\\', '|', '/', '-'};
         
         for (int progreso = 0; progreso <= 20; progreso++) {

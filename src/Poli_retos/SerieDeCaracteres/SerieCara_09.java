@@ -1,14 +1,14 @@
 package Poli_retos.SerieDeCaracteres;
 
 public class SerieCara_09 {
-    public void GR4_generar(int numeroTerminos) {
+    public void GR4_generar(int extension) {
         System.out.println("Serie de caracteres S9:");
         int repeticiones = 1;
         int siguienteRepeticiones = 1;
         
         char letra = 'a';
         
-        for (int i = 0; i < numeroTerminos; i++) {
+        for (int i = 0; i < extension; i++) {
             for (int j = 0; j < repeticiones; j++) {
                 System.out.print(letra);
             }

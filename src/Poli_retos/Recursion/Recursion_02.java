@@ -12,7 +12,7 @@ public class Recursion_02 {
    }
 
    public void G4_Recursion_2(){
-      
+      System.out.println("Recursion 02");
          Scanner scanner = new Scanner(System.in);
          int cantidad;
          while (true) {

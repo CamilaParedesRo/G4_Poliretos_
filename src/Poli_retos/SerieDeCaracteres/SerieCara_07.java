@@ -2,11 +2,11 @@ package Poli_retos.SerieDeCaracteres;
 
 public class SerieCara_07 {
     // Secuencia de caracteres S7: aa bbbb cccccc dddddddd ...
-    public void GR4_generarSecuenciaSiete(int numeroTerminos) {
+    public void GR4_generarSecuenciaSiete(int extension) {
         System.out.println("Secuencia de caracteres S7:");
         char letra = 'a';
         int repeticion = 2;
-        for (int i = 0; i < numeroTerminos; i++) {
+        for (int i = 0; i < extension; i++) {
             for (int j = 0; j < repeticion; j++) {
                 System.out.print(letra);
             }

@@ -10,7 +10,7 @@ public class Array_05 {
    public void G4_Array_5() throws InterruptedException{
     Scanner scanner = new Scanner(System.in);
     System.out.println("Array 5");
-
+    System.out.println();
       String nombre = "";
       while (true) {
           System.out.print("Ingrese su nombre completo:: ");

@@ -4,6 +4,8 @@ package Poli_retos.Array;
 public class Array_02 {
    // Método que dibuja las iniciales E y P
    public void GR4_generarArray(int tamano, char caracter) {
+      System.out.println("Array 2");
+      System.out.println();
        System.out.println("\nMatriz de iniciales:");
        GR4_dibujarE(tamano, caracter);
        System.out.println(); // Espacio entre las letras

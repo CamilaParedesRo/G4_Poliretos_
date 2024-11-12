@@ -1,7 +1,8 @@
 package Poli_retos.Recursion;
 
 public class Recursividad_05 {
-    public void GR4_contarProgresivo(int n) {
+    public void G4_Recursividad_5(int n) {
+        System.out.println("Recursion 05");
         GR4_conteoProgresivoHasta(n);
     }
 

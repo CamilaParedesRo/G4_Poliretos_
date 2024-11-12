@@ -1,7 +1,5 @@
 package Poli_retos.Figura;
 
-import java.util.Scanner;
-
 public class Figura_13 {
     /**
      *muestra la figura F13:	
@@ -16,11 +14,10 @@ public class Figura_13 {
         123456789
         ...
      */  
-    public void G4_Figuras_13(Scanner scanner){
+    public void G4_Figuras_13(int extension) {
         System.out.println("Figura 13"); 
-        System.out.println("Ingrese el numero de niveles: ");
-        int numeroNiveles = scanner.nextInt();
-        for(int i=0; i<=numeroNiveles; i++){
+
+        for(int i=0; i<=extension; i++){
         
             for(int j=1; j<=i; j++){
                 System.out.print(j);

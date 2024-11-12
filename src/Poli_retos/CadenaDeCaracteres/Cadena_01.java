@@ -1,7 +1,11 @@
 package Poli_retos.CadenaDeCaracteres;
-
+import java.util.Scanner;
 public class Cadena_01 {
-    public void GR4_contarVocales(String frase) {
+
+    public void G4_CadenadeCaracteres_1(Scanner scanner) {
+        System.out.println("Cadena de caracteres 01");
+        System.out.println("Ingrese una frase: ");
+        String frase = scanner.nextLine();
         int contadorVocales = GR4_contarVocalesEnFrase(frase);
         System.out.println("La frase \"" + frase + "\" tiene " + contadorVocales + " vocales.");
     }

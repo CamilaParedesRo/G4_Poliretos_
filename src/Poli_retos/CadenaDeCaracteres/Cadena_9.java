@@ -6,7 +6,7 @@ public class Cadena_9 {
 /**
      *muestra la cadena C09: Ingresa una frase y convertir una letra a mayusculas y otra a minisculas 
      */
-    public void G4_CadenadeCaracteres_9 (Scanner scanner){
+    public void G4_CadenadeCaracteres_9(Scanner scanner){
         System.out.println("Cadena de caracteres 09");
         System.out.println("Ingrese una frase: ");
         String frase = scanner.nextLine();

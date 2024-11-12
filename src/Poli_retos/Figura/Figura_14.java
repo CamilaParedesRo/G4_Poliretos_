@@ -1,16 +1,12 @@
 package Poli_retos.Figura;
 
-import java.util.Scanner;
-
 public class Figura_14 {
-public void G4_Figura_14(Scanner scanner) {
+public void G4_Figura_14(int extension) {
         System.out.println("Figura 14");
-        System.out.print("Introduce el número de filas para el Triángulo de Pascal: ");
-        int filas = scanner.nextInt();
 
-        for (int i = 0; i < filas; i++) {
+        for (int i = 0; i < extension; i++) {
            
-            for (int j = 0; j < filas - i; j++) {
+            for (int j = 0; j < extension - i; j++) {
                 System.out.print(" ");
             }
 

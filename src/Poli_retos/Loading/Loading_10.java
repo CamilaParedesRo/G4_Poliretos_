@@ -11,6 +11,7 @@ public class Loading_10 {
      *      ________________________      66.4 / 76.4 kB
      */
     public void G4_Loading_10() {
+        System.out.print("Loading  10");
         int numero = new Random().nextInt(91)+ 10;
         String archivo ="ArchivoYarl-win_amd64.whl";
         double total = numero;

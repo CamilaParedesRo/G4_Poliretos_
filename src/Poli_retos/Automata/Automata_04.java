@@ -1,7 +1,14 @@
 package Poli_retos.Automata;
 
+import java.util.Scanner;
+
 public class Automata_04 {
-    public void GR4_ejecutar(String[] pruebas) {
+    public void G4_Automata_4(Scanner scanner) {
+        System.out.println("Automata 4");
+        System.out.println();
+        System.out.print("Introduce varias cadenas separadas por espacios para verificar si son decimales válidos: ");
+        String input = scanner.nextLine();
+        String[] pruebas = input.split(" "); // Divide las cadenas ingresadas en un array
         for (String prueba : pruebas) {
             System.out.println("La cadena \"" + prueba + "\" es un número decimal válido: " + GR4_esDecimal(prueba));
         }

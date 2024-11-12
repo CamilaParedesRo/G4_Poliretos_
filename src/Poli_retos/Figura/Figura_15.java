@@ -2,15 +2,15 @@
 package Poli_retos.Figura;
 
 public class Figura_15 {
-    public void GR4_dibujar(int numeroFilas) {
-        GR4_generar(numeroFilas);
+    public void G4_Figura_15(int extension) {
+        GR4_generar(extension);
     }
 
-    private void GR4_generar(int numeroFilas) {
-        System.out.println("Triángulo de Pascal:");
+    private void GR4_generar(int extension) {
+        System.out.println("Figura 15:");
 
-        for (int i = 0; i < numeroFilas; i++) {
-            for (int j = 0; j < numeroFilas - i; j++) {
+        for (int i = 0; i < extension; i++) {
+            for (int j = 0; j < extension - i; j++) {
                 System.out.print("  ");
             }
 

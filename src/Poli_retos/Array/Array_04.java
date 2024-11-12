@@ -6,6 +6,7 @@ package Poli_retos.Array;
       public void G4_Array_4() {
    
          System.out.println("Array 4");
+         
          Scanner scanner = new Scanner(System.in);
            String nombre = "";
            while (true) {

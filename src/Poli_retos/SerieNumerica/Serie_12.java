@@ -1,7 +1,7 @@
 package Poli_retos.SerieNumerica;
 
 public class Serie_12 {
-    public void GR4_generar(int numeroTerminos) {
+    public void G4_SerieNumerica_S12(int numeroTerminos) {
         System.out.println("Serie numerica S12:");
         int valor = 2;
         int incremento = 4;

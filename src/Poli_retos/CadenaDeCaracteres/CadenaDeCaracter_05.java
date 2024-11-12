@@ -3,7 +3,7 @@ package Poli_retos.CadenaDeCaracteres;
 import java.util.Scanner;
 
 public class CadenaDeCaracter_05 {
-    public void G4_Cadena_5(Scanner scanner) {
+    public void G4_CadenadeCaracteres_5(Scanner scanner) {
         System.out.println("Cadena 5");
 
         String palabra;

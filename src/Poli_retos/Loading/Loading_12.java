@@ -1,7 +1,8 @@
 package Poli_retos.Loading;
 
 public class Loading_12 {
-    public void GR4_mostrar() {
+    public void G4_Loading_12() {
+        System.out.print("Loading 12");
         String[] figura = {
             "    \\|||//     ",
             "     (> <)      ",

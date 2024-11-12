@@ -1,7 +1,7 @@
 package Poli_retos.SerieNumerica;
 
 public class Serie_04 {
-    public void GR4_generar(int numeroTerminos) {
+    public void G4_SerieNumerica_S4(int numeroTerminos) {
         System.out.println("Serie numerica S4:");
         int fibonacciUno = 0;
         int fibonacciDos = 1;

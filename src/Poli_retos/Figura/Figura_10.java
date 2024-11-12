@@ -2,14 +2,14 @@
 package Poli_retos.Figura;
 
 public class Figura_10 {
-    public void GR4_dibujar(int numeroFilas) {
-        GR4_generar(numeroFilas);
+    public void G4_Figura_10(int extension) {
+        GR4_generar(extension);
     }
 
-    private void GR4_generar(int numeroFilas) {
+    private void GR4_generar(int extension) {
         System.out.println("Figura F10:");
 
-        for (int i = 1; i <= numeroFilas; i++) {
+        for (int i = 1; i <= extension; i++) {
             for (int j = 1; j < i; j++) {
                 System.out.print("   ");
             }

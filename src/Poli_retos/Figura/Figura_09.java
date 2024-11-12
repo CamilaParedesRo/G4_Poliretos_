@@ -1,24 +1,21 @@
 package Poli_retos.Figura;
 
-import java.util.Scanner;
-
 public class Figura_09 {
 
-    public void G4_Figura_09(Scanner scanner) {
+    public void G4_Figura_09(int extension) {
         System.out.println("Figura 9: ");
-        System.out.print("Ingrese el número de niveles: ");
-        int nivel = scanner.nextInt();
-        int numeroColumna = (2 * nivel) - 1;
 
-        for (int fila = 0; fila < nivel; fila++) {
+        int numeroColumna = (2 * extension) - 1;
+
+        for (int fila = 0; fila < extension; fila++) {
             for (int columna = 1; columna <= numeroColumna; columna++) {
-                if (fila == 0 && columna == nivel) {
+                if (fila == 0 && columna == extension) {
                     System.out.print("_");
                 }
-                else if (fila > 0 && columna == (nivel - fila)) {
+                else if (fila > 0 && columna == (extension - fila)) {
                     System.out.print("__|");
                 }
-                else if (fila > 0 && columna == (nivel + fila) - 1) {
+                else if (fila > 0 && columna == (extension + fila) - 1) {
                     System.out.print("|__");
                 }
                 else {

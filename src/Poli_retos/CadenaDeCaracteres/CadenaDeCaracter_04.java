@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CadenaDeCaracter_04 {
     public void G4_CadenaDeCaracter04(Scanner scanner) {
-
+        System.out.println("Cadena de caracteres 04");
         String frase;
         while (true) {
             if (scanner.hasNextLine()) {  

@@ -2,7 +2,7 @@ package Poli_retos.Loading;
 
 public class Loading_05 {
     public void G4_Loading05()  {
-        
+        System.out.print("Loading 5");
         int longitudBarra = 20;
         char[] punta = {'>', '-'};
         int progreso = 0;

@@ -1,4 +1,5 @@
 package Poli_retos.SerieNumerica;
+
 public class SerieNumerica_01 {
 public void G4_SeriesNumericas_S1 (int extension){
       System.out.println("Serie Numerica 01");
