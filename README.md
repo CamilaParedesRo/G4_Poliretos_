@@ -9,22 +9,22 @@ The workspace contains two folders by default, where:
 - `bin`: folder by default.
 - `Poli_retos`: Ejercicios poliretos
 
-Grupo: 4
+##Grupo: 4##
 
-Autores:
+*Autores:*
 Pillajo Anahi. Rochina Adayeli. Paredes Camila.
 
-Curso: 
+**Curso:** 
 
 ## Descripción
-Este proyecto de los poliretos cuenta con una amplia variedad de ejercicios los cuales estan destinados a reforzar los conocimientos y manejo de java.
+*Este proyecto de los poliretos cuenta con una amplia variedad de ejercicios los cuales estan destinados a reforzar los conocimientos y manejo de java.*
 
 Ejercicios
-Series Nuemricas
-Series de caracteres
-Figuras: se debe pedir tamaño/niveles
-Cadena de caracteres
-Arrays
-Loading
-Recursion
-Grafos y Automatas
+1. Series Nuemricas
+2. Series de caracteres
+3. Figuras: se debe pedir tamaño/niveles
+4. Cadena de caracteres
+5. Arrays
+6. Loading
+7. Recursion
+8. Grafos y Automatas
