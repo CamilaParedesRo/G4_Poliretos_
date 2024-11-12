@@ -73,12 +73,14 @@ import Poli_retos.SerieNumerica.SerieNumerica_01;
 import Poli_retos.SerieNumerica.SerieNumerica_03;
 import Poli_retos.SerieNumerica.SerieNumerica_06;
 import Poli_retos.SerieNumerica.SerieNumerica_08;
+import Poli_retos.SerieNumerica.SerieNumerica_11;
 import Poli_retos.SerieNumerica.SerieNumerica_5;
 import Poli_retos.SerieNumerica.Serie_02;
 import Poli_retos.SerieNumerica.Serie_04;
 import Poli_retos.SerieNumerica.Serie_07;
 import Poli_retos.SerieNumerica.Serie_09;
 import Poli_retos.SerieNumerica.Serie_12;
+
 import Poli_retos.SerieNumerica.SerieaNumerica_10;
 import Poli_retos.Start.Grupo_04;
 
@@ -99,6 +101,7 @@ public class Menu {
         SerieNumerica_08 serieNumerica8 = new SerieNumerica_08();
         Serie_09 serie9 = new Serie_09();
         SerieaNumerica_10 serie10 = new SerieaNumerica_10();
+        SerieNumerica_11 serie11 = new SerieNumerica_11();
         Serie_12 serie12 = new Serie_12();
 
         //Series de Caracteres
@@ -244,6 +247,8 @@ public class Menu {
                    serie9.G4_SerieNumerica_S9(extension);
                    System.out.println();
                    serie10.G4_SeriesNumericas_S10(extension);
+                   System.out.println();
+                   serie11.G4_SerieNumerica_11(extension);
                    System.out.println();
                    serie12.G4_SerieNumerica_S12(extension);
                     break;
