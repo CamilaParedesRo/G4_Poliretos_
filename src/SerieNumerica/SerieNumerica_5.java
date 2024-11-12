@@ -1,8 +1,8 @@
-package SecuenciasNumericas;
+package SerieNumerica;
 
 import java.util.Scanner;
 
-public class SecuenciaNumerica_5 {
+public class SerieNumerica_5 {
     //*** muestra la serie  S5: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31... 
     public void G4_SeriesNumericas_S5(Scanner scanner) {
         System.out.println("Serie numerica 05");
