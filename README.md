@@ -1,6 +1,4 @@
-## Getting Started
-
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Poliretos
 
 ## Folder Structure
 
@@ -8,11 +6,25 @@ The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain sources
 - `lib`: the folder to maintain dependencies
+- `bin`: folder by default.
+- `Poli_retos`: Ejercicios poliretos
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Grupo: 4
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Autores:
+Pillajo Anahi. Rochina Adayeli. Paredes Camila.
 
-## Dependency Management
+Curso: 
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Descripción
+Este proyecto de los poliretos cuenta con una amplia variedad de ejercicios los cuales estan destinados a reforzar los conocimientos y manejo de java.
+
+Ejercicios
+Series Nuemricas
+Series de caracteres
+Figuras: se debe pedir tamaño/niveles
+Cadena de caracteres
+Arrays
+Loading
+Recursion
+Grafos y Automatas
